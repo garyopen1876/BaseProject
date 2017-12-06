@@ -5,9 +5,9 @@ import java.util.Scanner;
 public class xxx {
     public String name(int number){
         if(number == 1){
-            return "illya";
+            return "test OK";
         }  else{
-            return "lin";
+            return "test faile";
         }
     }
 }
