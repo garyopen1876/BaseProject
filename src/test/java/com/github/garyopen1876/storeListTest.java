@@ -5,8 +5,7 @@ import junit.framework.TestCase;
 import org.junit.Test;
 
 import java.util.ArrayList;
-import java.util.Random;
-import java.util.Scanner;
+
 
 import static org.junit.Assert.*;
 
