@@ -19,9 +19,10 @@ public class storeShowTime {
                 checkStoreShowTime++;
                 continue;
             }
+            System.out.println("=======================================");
             System.out.print("請選擇想要查看時間的店家:");
             System.out.println("(輸入back返回主介面):");
-            String showwhichtime=Scannerstoreshowtime.nextLine();
+            String showwhichtime=Scannerstoreshowtime.next();
             for (int m = 0; m < x.size(); m++) {
                 if (showwhichtime.equals(x.get(m).getName())) {
                     checkwronginput2++;
@@ -49,7 +50,7 @@ public class storeShowTime {
                 }
             }
             if(checkwronginput2==0){
-                System.out.println("輸入錯誤!!請再輸入一遍");
+                System.out.println("找不到該店家");
             }
          }
         for (int loop = 0; loop < 30; loop++) {

@@ -23,10 +23,11 @@ public class storeDelete {
             System.out.println("=======================================");
             System.out.print("請輸入想刪除的店家");
             System.out.println("(輸入back返回搜尋店家介面):");
-            String deleteWhichStore = ScannerstoreDelete.nextLine();
+            String deleteWhichStore = ScannerstoreDelete.next();
             for (int k = 0; k < x.size(); k++) {
-                checkwronginput3++;
                 if (deleteWhichStore.equals(x.get(k).getName())) {
+                    checkwronginput3++;
+                    checkDelete++;
                     x.remove(k);
                 } else if (deleteWhichStore.equals("back")) {
                     checkDelete++;
@@ -35,13 +36,14 @@ public class storeDelete {
 
             }
             if(checkwronginput3==0){
-                System.out.println("輸入錯誤!!請再輸入一遍");
+                System.out.println("找不到該店家");
             }
 
         }
         for (int loop= 0; loop < 30; loop++) {
             System.out.println("");
         }
+            System.out.println("已刪除該店家");
         return x;
     }
 

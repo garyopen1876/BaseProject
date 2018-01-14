@@ -18,9 +18,10 @@ public class storeStar {
                 checkstoreStar1++;
                 continue;
             }
-            System.out.print("請選擇想要知道評價的店家:");
+            System.out.println("=======================================");
+            System.out.print("請輸入想要知道評價的店家:");
             System.out.println("(輸入back返回主介面):");
-            String showWhichstoreStar = ScannerstoreStar.nextLine();
+            String showWhichstoreStar = ScannerstoreStar.next();
             for (int l = 0; l < x.size(); l++) {
                 if ( showWhichstoreStar.equals(x.get(l).getName())) {
                     checkwronginput4++;
@@ -62,9 +63,8 @@ public class storeStar {
                 }
             }
             if(checkwronginput4==0){
-                System.out.println("輸入錯誤!!請再輸入一遍");
+                System.out.println("找不到該店家");
             }
-
         }
         for (int loop= 0; loop < 30; loop++) {
             System.out.println("");

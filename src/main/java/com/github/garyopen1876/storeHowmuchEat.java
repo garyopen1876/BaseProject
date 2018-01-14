@@ -35,9 +35,9 @@ public class storeHowmuchEat {
                             System.out.println(x.get(n).getName());
                             howmanycaneat++;
                         }
-                        if(howmanycaneat==0){
-                            System.out.println("你有夠窮!!!你甚麼都吃不起啦");
-                        }
+                    }
+                    if(howmanycaneat==0){
+                        System.out.println("你有夠窮!!!你甚麼都吃不起啦");
                     }
                     break;
                 case 2:

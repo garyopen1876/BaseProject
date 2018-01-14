@@ -22,7 +22,7 @@ public class storeIntroduction {
                 System.out.println("=======================================");
                 System.out.print("請輸入想觀看的店家");
                 System.out.println("(輸入back返回搜尋店家介面):");
-                String showWhichStore = ScannerIntroduction.nextLine();
+                String showWhichStore = ScannerIntroduction.next();
                 int checkwronginput1 = 0;
                 for (int j = 0; j < x.size(); j++) {
                     if (showWhichStore.equals(x.get(j).getName())) {
@@ -44,11 +44,11 @@ public class storeIntroduction {
                     }
                 }
                 if (checkwronginput1 == 0) {
-                    System.out.println("輸入錯誤!!請再輸入一遍");
+                    System.out.println("找不到該店家");
                 }
             } else {
                 System.out.println("輸入back返回搜尋店家介面");
-                String back = ScannerIntroduction.nextLine();
+                String back = ScannerIntroduction.next();
                 if(back.equals("back")){
                     checkIntroduction++;
                     continue;
