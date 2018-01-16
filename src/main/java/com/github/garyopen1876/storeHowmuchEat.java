@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class storeHowmuchEat {
-    public void storeHowmuchEat(ArrayList<storeData> x) {
+    public ArrayList<storeData> storeHowmuchEat(ArrayList<storeData> x) {
         int checkstorehowmucheat=0;
         Scanner Scannerstorehowmucheat = new Scanner(System.in);
         System.out.println("=======================================");
@@ -53,5 +53,6 @@ public class storeHowmuchEat {
             System.out.println("");
 
         }
+        return x;
     }
 }

@@ -7,7 +7,7 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class storeRandom {
-    public void storeRandom(ArrayList<storeData> x) {
+    public  ArrayList<storeData> storeRandom(ArrayList<storeData> x) {
         int checkstorerandom = 0;
         Random ran2= new Random();
         Scanner Scannerstorerandom = new Scanner(System.in);
@@ -46,5 +46,6 @@ public class storeRandom {
             System.out.println("");
 
         }
+        return x;
     }
 }

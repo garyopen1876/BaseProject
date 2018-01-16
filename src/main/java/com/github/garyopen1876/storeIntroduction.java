@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class storeIntroduction {
 
-    public void IntroductionShow(ArrayList<storeData> x) {
+    public ArrayList<storeData> IntroductionShow(ArrayList<storeData> x) {
         int checkIntroduction = 0;
         int checkdoonetime = 0;
         Scanner ScannerIntroduction = new Scanner(System.in);
@@ -45,6 +45,9 @@ public class storeIntroduction {
                     }
                 }
                 if (checkwronginput1 == 0) {
+                    for (int loop = 0; loop < 30; loop++) {
+                        System.out.println("");
+                    }
                     System.out.println("找不到該店家");
                 }
             } else {
@@ -57,10 +60,8 @@ public class storeIntroduction {
                     System.out.println("輸入錯誤!!請再輸入一遍");
                 }
             }
-            for (int loop = 0; loop < 30; loop++) {
-                System.out.println("");
-            }
 
         }
+        return x;
     }
 }

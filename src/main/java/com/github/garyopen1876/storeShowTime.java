@@ -7,7 +7,7 @@ import java.util.Scanner;
 import java.util.Random;
 
 public class storeShowTime {
-    public void storeShowTime(ArrayList<storeData> x) {
+    public  ArrayList<storeData> storeShowTime(ArrayList<storeData> x) {
         Scanner Scannerstoreshowtime = new Scanner(System.in);
         Random ran = new Random();
         int checkStoreShowTime = 0;
@@ -57,5 +57,6 @@ public class storeShowTime {
             System.out.println("");
 
         }
+        return x;
     }
 }
