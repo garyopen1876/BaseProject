@@ -7,7 +7,6 @@ import java.util.Scanner;
 public class storeStar {
 
     public void storeStar(ArrayList<storeData> likeStar){
-        int checkstoreStar1=0;
         int checkprint=0;
         int i = 0;
         String WhichStore=new String();
@@ -18,13 +17,16 @@ public class storeStar {
         System.out.println("歡迎來到提供店家評價");
             int checkstoreStar2=0;
             System.out.println("=======================================");
-            System.out.print("請輸入想要過濾的評價範圍(1~5)，輸入-1、-1返回主介面:");
-            System.out.print("評價上圍:");
+            System.out.print("請輸入想要過濾的評價範圍(0~5)，輸入-1、-1返回主介面:");
+            System.out.print("評價範圍(低):");
             double start = ScannerstoreStar.nextInt();
-            System.out.print("評價下圍:");
+            System.out.print("評價範圍(高):");
             double end = ScannerstoreStar.nextInt();
             if(start == -1 && end == -1){
-                System.out.println("返回主介面\n");
+                for (int loop = 0; loop < 30; loop++) {
+                    System.out.println("");
+                }
+                System.out.println("返回主介面");
                 checkstoreStar2++;
             }
             if(checkstoreStar2==0) {
@@ -45,12 +47,12 @@ public class storeStar {
                 System.out.println("請選擇進行項目:");
                 System.out.println("1.我要評分!!");
                 System.out.println("2.我要觀看店家的詳細資料");
-                System.out.println("3.返回主畫面:");
+                System.out.println("3.返回主畫面");
                 System.out.println("=======================================");
                 int iWantstoreStar = ScannerstoreStar.nextInt();
                 switch(iWantstoreStar){
                     case 1:
-                        System.out.println("請輸入欲評分之店家名稱");
+                        System.out.println("請輸入欲評分之店家名稱:");
                         WhichStore = ScannerstoreStar.next();
                         for (i = 0; i < newLikeStar.size(); i++) {
                             if(WhichStore.equals(newLikeStar.get(i).getName())) {
@@ -64,7 +66,7 @@ public class storeStar {
                         WhichStore = ScannerstoreStar.next();
                         for (i = 0; i < newLikeStar.size(); i++) {
                             if (WhichStore.equals(newLikeStar.get(i).getName())) {
-                                System.out.println("\n===============================================================");
+                                System.out.println("===============================================================");
                                 System.out.println(newLikeStar.get(i).getName());
                                 System.out.println("平均價格為:" + newLikeStar.get(i).getMoney() + "元");
                                 System.out.println("位於:" + newLikeStar.get(i).getWhereStore());

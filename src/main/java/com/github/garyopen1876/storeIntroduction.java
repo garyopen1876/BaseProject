@@ -57,11 +57,10 @@ public class storeIntroduction {
                     System.out.println("輸入錯誤!!請再輸入一遍");
                 }
             }
+            for (int loop = 0; loop < 30; loop++) {
+                System.out.println("");
+            }
 
         }
-        for (int loop = 0; loop < 30; loop++) {
-            System.out.println("");
-        }
-
     }
 }

@@ -48,7 +48,7 @@ public class storeDelete {
     }
 
         protected int deletstore(String deleteWhichStore) {
-            int loop=0;
+
             if (deleteWhichStore.equals("back")) {
                 System.out.println("=======================================");
                 System.out.println("返回搜尋店家介面");
@@ -58,6 +58,9 @@ public class storeDelete {
                 for (int k = 0; k < x.size(); k++) {
                     if (deleteWhichStore.equals(x.get(k).getName())) {
                         (this.x).remove(k);
+                        for (int loop= 0; loop < 30; loop++) {
+                            System.out.println("");
+                        }
                         System.out.println("=======================================");
                         System.out.println("已刪除該店家");
                         System.out.println("=======================================");
