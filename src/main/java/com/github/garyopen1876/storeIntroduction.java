@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class storeIntroduction {
+
     public void IntroductionShow(ArrayList<storeData> x) {
         int checkIntroduction = 0;
         int checkdoonetime = 0;

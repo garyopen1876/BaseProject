@@ -5,69 +5,90 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class storeStar {
-    public void storeStar(ArrayList<storeData> x){
+
+    public void storeStar(ArrayList<storeData> likeStar){
         int checkstoreStar1=0;
+        int checkprint=0;
+        int i = 0;
+        String WhichStore=new String();
         Scanner ScannerstoreStar = new Scanner(System.in);
         storeMakeStar storeMakeStar= new storeMakeStar();
+        ArrayList<storeData> newLikeStar=new ArrayList<storeData>();;
         System.out.println("=======================================");
         System.out.println("歡迎來到提供店家評價");
-        while (checkstoreStar1 == 0) {
-            int checkwronginput4=0;
             int checkstoreStar2=0;
-            if(x.size()==0){              /*矩陣為空的時候*/
-                checkstoreStar1++;
-                continue;
-            }
             System.out.println("=======================================");
-            System.out.print("請輸入想要知道評價的店家:");
-            System.out.println("(輸入back返回主介面):");
-            String showWhichstoreStar = ScannerstoreStar.next();
-            for (int l = 0; l < x.size(); l++) {
-                if ( showWhichstoreStar.equals(x.get(l).getName())) {
-                    checkwronginput4++;
-                    for (int loop= 0; loop < 30; loop++) {
-                        System.out.println("");
-                    }
-                    System.out.println("===============================================================");
-                    System.out.println("星星評價由低到高(1~5)");
-                    System.out.println(x.get(l).getName()+"的星星評價為 "+x.get(l).getStar()+"顆星");
-                    System.out.println("評價人數為"+x.get(l).getStarPeople());
-                    System.out.println("===============================================================");
-                    while(checkstoreStar2==0){
-                        System.out.println("=======================================");
-                        System.out.println("請選擇進行項目:");
-                        System.out.println("1.我要評分!!");
-                        System.out.println("2.我要觀看其他店家的評價");
-                        System.out.println("=======================================");
-                        int iWantstoreStar = ScannerstoreStar.nextInt();
-                        switch(iWantstoreStar){
-                            case 1:
-                                storeMakeStar.storeMakeStar(x,l);        /*進入storeMakeStar*/
-                                checkstoreStar2++;
-                                break;
-                            case 2:
-                                checkstoreStar2++;
-                                for (int loop= 0; loop < 30; loop++) {
-                                    System.out.println("");
-                                }
-                                break;
-                            default:
-                                System.out.println("輸入錯誤!!請再輸入一遍");
-                                break;
-                        }
+            System.out.print("請輸入想要過濾的評價範圍(1~5)，輸入-1、-1返回主介面:");
+            System.out.print("評價上圍:");
+            double start = ScannerstoreStar.nextInt();
+            System.out.print("評價下圍:");
+            double end = ScannerstoreStar.nextInt();
+            if(start == -1 && end == -1){
+                System.out.println("返回主介面\n");
+                checkstoreStar2++;
+            }
+            if(checkstoreStar2==0) {
+                System.out.println("==========店家列表==========");
+                int flag = 0;
 
+                for (i = 0; i < likeStar.size(); i++) {
+                    if (likeStar.get(i).getStar() >= start && likeStar.get(i).getStar() <= end) {
+                        newLikeStar.add(likeStar.get(i));
+                        System.out.println(newLikeStar.get(flag).getName());
+                        flag++;
                     }
-                } else if ( showWhichstoreStar.equals("back")) {
-                    checkstoreStar1++;
-                    continue;
+                }
+                System.out.println("=======================================");
+            }
+            while(checkstoreStar2==0){
+                System.out.println("=======================================");
+                System.out.println("請選擇進行項目:");
+                System.out.println("1.我要評分!!");
+                System.out.println("2.我要觀看店家的詳細資料");
+                System.out.println("3.返回主畫面:");
+                System.out.println("=======================================");
+                int iWantstoreStar = ScannerstoreStar.nextInt();
+                switch(iWantstoreStar){
+                    case 1:
+                        System.out.println("請輸入欲評分之店家名稱");
+                        WhichStore = ScannerstoreStar.next();
+                        for (i = 0; i < newLikeStar.size(); i++) {
+                            if(WhichStore.equals(newLikeStar.get(i).getName())) {
+                                storeMakeStar.storeMakeStar(newLikeStar,i);        /*進入storeMakeStar*/
+                            }
+                        }
+                        break;
+                    case 2:
+                        checkprint=0;
+                        System.out.println("請輸入店家名稱");
+                        WhichStore = ScannerstoreStar.next();
+                        for (i = 0; i < newLikeStar.size(); i++) {
+                            if (WhichStore.equals(newLikeStar.get(i).getName())) {
+                                System.out.println("\n===============================================================");
+                                System.out.println(newLikeStar.get(i).getName());
+                                System.out.println("平均價格為:" + newLikeStar.get(i).getMoney() + "元");
+                                System.out.println("位於:" + newLikeStar.get(i).getWhereStore());
+                                System.out.println(newLikeStar.get(i).getIntroduction());
+                                System.out.println(newLikeStar.get(i).getName() + "的星星評價為 " + newLikeStar.get(i).getStar() + "顆星");
+                                System.out.println("評價人數為" + newLikeStar.get(i).getStarPeople());
+                                System.out.println("===============================================================");
+                                System.out.println();
+                                checkprint++;
+                                break;
+                            }
+                        }
+                        if(checkprint==0) {
+                            System.out.println("查無店家!!");
+                        }
+                        break;
+                    case 3:
+                        checkstoreStar2++;
+                        break;
+                    default:
+                        System.out.println("輸入錯誤!!請再輸入一遍");
+                        break;
                 }
             }
-            if(checkwronginput4==0){
-                System.out.println("找不到該店家");
-            }
         }
-        for (int loop= 0; loop < 30; loop++) {
-            System.out.println("");
-        }
-    }
+
 }

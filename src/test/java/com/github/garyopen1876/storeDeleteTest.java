@@ -1,24 +1,22 @@
 package com.github.garyopen1876;
 
-import com.github.garyopen1876.storeData;
-import com.github.garyopen1876.storeList;
+import junit.framework.TestCase;
 import org.junit.Test;
 import org.junit.Before;
 import org.junit.After;
 
-import java.io.ByteArrayInputStream;
 import java.util.ArrayList;
 
 import static junit.framework.TestCase.assertEquals;
 
 /**
-* storeList Tester.
+* storeDelete Tester.
 *
 * @author <Authors name>
 * @since <pre>�@�� 16, 2018</pre>
 * @version 1.0
 */
-public class storeListTest {
+public class storeDeleteTest {
 
 @Before
 public void before() throws Exception {
@@ -30,11 +28,11 @@ public void after() throws Exception {
 
 /**
 *
-* Method: storeNameList(ArrayList<storeData> x)
+* Method: deletStore()
 *
 */
 @Test
-public void testStoreNameList() throws Exception {
+public void testDeletStore() throws Exception {
 //TODO: Test goes here...
     /*店家資料*/
     storeData store1 = new storeData("麥當勞","著名的連鎖速食店 上午10:15~10:30為餐點供應轉換時間", "407台中市西屯區福星路427號",100,4.0);
@@ -80,8 +78,61 @@ public void testStoreNameList() throws Exception {
     testArr.add(store19);
     testArr.add(store20);
     /*加入店家資料*/
-    storeList storeListTest=new storeList();
-    assertEquals(testArr,storeListTest.storeNameList(testArr,true));
+    assertEquals(testArr,new storeDelete(testArr).deletStore(true));
+}
+
+
+/**
+*
+* Method: choose()
+*
+*/
+@Test
+public void testChoose() throws Exception {
+//TODO: Test goes here...
+    storeData store1 = new storeData("麥當勞","著名的連鎖速食店 上午10:15~10:30為餐點供應轉換時間", "407台中市西屯區福星路427號",100,4.0);
+    ArrayList<storeData> testArr=new ArrayList<storeData>();
+    ArrayList<storeData> testArr1=new ArrayList<storeData>();
+    testArr.add(store1);
+    TestCase.assertEquals("麥當勞",new storeDelete(testArr).choose(true));
+    TestCase.assertEquals("back",new storeDelete(testArr1).choose(true));
+/*
+try {
+   Method method = storeDelete.getClass().getMethod("choose");
+   method.setAccessible(true);
+   method.invoke(<Object>, <Parameters>);
+} catch(NoSuchMethodException e) {
+} catch(IllegalAccessException e) {
+} catch(InvocationTargetException e) {
+}
+*/
+}
+
+/**
+*
+* Method: deletstore(String deleteWhichStore)
+*
+*/
+@Test
+public void testDeletstore() throws Exception {
+//TODO: Test goes here...
+    storeData store1 = new storeData("麥當勞","著名的連鎖速食店 上午10:15~10:30為餐點供應轉換時間", "407台中市西屯區福星路427號",100,4.0);
+    ArrayList<storeData> testArr=new ArrayList<storeData>();
+    testArr.add(store1);
+    TestCase.assertEquals(1,new storeDelete(testArr).deletstore("麥當勞"));
+    TestCase.assertEquals(1,new storeDelete(testArr).deletstore("back"));
+    TestCase.assertEquals(0,new storeDelete(testArr).deletstore("肯德雞"));
+
+/*
+try {
+   Method method = storeDelete.getClass().getMethod("deletstore", String.class);
+   method.setAccessible(true);
+   method.invoke(<Object>, <Parameters>);
+} catch(NoSuchMethodException e) {
+} catch(IllegalAccessException e) {
+} catch(InvocationTargetException e) {
+}
+*/
 }
 
 }

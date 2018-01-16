@@ -28,6 +28,7 @@ public class main {
         storeData store19 = new storeData("擄胃專家","好吃，份量十足，烤肉調味夠味，肉片不厚", "407台中市西屯區文華路127巷22號",75,4.4);
         storeData store20 = new storeData("米果","關東煮料多又便宜，炸物也非常好吃", "407台中市西屯區逢甲路20巷28弄4號",70,4.2);
         ArrayList<storeData> x=new ArrayList<storeData>();
+        ArrayList<storeData> likeStar=new ArrayList<storeData>();
         /*加入店家資料*/
         x.add(store1);
         x.add(store2);
@@ -49,6 +50,7 @@ public class main {
         x.add(store18);
         x.add(store19);
         x.add(store20);
+        likeStar=x;
         /*加入店家資料*/
         storeList storelist=new storeList();
         storeStar storestar=new storeStar();
@@ -77,10 +79,10 @@ public class main {
             }
             switch (choosemain) {
                 case 1:
-                    storelist.storeNameList(x); /*進入尋找店家*/
+                    storelist.storeNameList(x,false); /*進入尋找店家*/
                     break;
                 case 2:
-                    storestar.storeStar(x);/*進入提供店家評價*/
+                    storestar.storeStar(likeStar);/*進入提供店家評價*/
                     break;
                 case 3:
                     storeshowtime.storeShowTime(x);/*進入列出店家等待時間*/
