@@ -50,4 +50,12 @@ public class storeHowmuchEatTest extends TestCase {
         }
 
     }
+
+    public void test_4() {
+        storeHowmuchEat sH = new storeHowmuchEat();
+        ArrayList<storeData> testArray = new ArrayList<storeData>();
+        assertEquals(testArray,  sH.storeHowmuchEat(testArray));
+        System.out.println("店家被刪光光了");
+
+    }
 }

@@ -79,7 +79,7 @@ public class main {
             }
             switch (choosemain) {
                 case 1:
-                    storelist.storeNameList(x,false); /*進入尋找店家*/
+                    storelist.storeNameList(x); /*進入尋找店家*/
                     break;
                 case 2:
                     storestar.storeStar(likeStar);/*進入提供店家評價*/

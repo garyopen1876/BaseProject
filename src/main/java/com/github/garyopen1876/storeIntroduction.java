@@ -45,9 +45,6 @@ public class storeIntroduction {
                     }
                 }
                 if (checkwronginput1 == 0) {
-                    for (int loop = 0; loop < 30; loop++) {
-                        System.out.println("");
-                    }
                     System.out.println("找不到該店家");
                 }
             } else {

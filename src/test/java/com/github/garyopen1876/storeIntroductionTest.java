@@ -46,4 +46,12 @@ public class storeIntroductionTest extends TestCase{
         }
     }
 
+    public void test_4() {
+        storeIntroduction sI=new  storeIntroduction();
+        ArrayList<storeData> testArray = new ArrayList<storeData>();
+        assertEquals(testArray,  sI.IntroductionShow(testArray));
+        System.out.println("店家被刪光光了");
+
+    }
+
 }

@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class storeMakeStar {
-    public void storeMakeStar(ArrayList<storeData> x, int l){
+    public ArrayList<storeData> storeMakeStar(ArrayList<storeData> x, int l){
         Scanner ScannerstoreMakeStar = new Scanner(System.in);
         System.out.println("請給這家店你心中的分數吧(只能輸入0~5喔!!!!):");
         double iGivePoint=ScannerstoreMakeStar.nextFloat();
@@ -30,5 +30,6 @@ public class storeMakeStar {
             System.out.println("評價成功!!請重新檢視這家店的評價");
             System.out.println("=======================================");
         }
+        return x;
     }
 }

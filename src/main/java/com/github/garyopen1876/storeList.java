@@ -6,14 +6,13 @@ import java.util.Scanner;
 
 public class storeList {
 
-    public  ArrayList<storeData> storeNameList(ArrayList<storeData> x, boolean test) {
+    public  ArrayList<storeData> storeNameList(ArrayList<storeData> x) {
         Scanner Scannerstorelist = new Scanner(System.in);
         int checkStoreNameList = 0;
         storeIntroduction storeIntroduction=new storeIntroduction();
-        storeDelete storeDelete=new storeDelete(x);
+        storeDelete storeDelete=new storeDelete();
         System.out.println("=======================================");
         System.out.println("歡迎來到尋找店家");
-        if(test == false ) {
             while (checkStoreNameList == 0) {
                 System.out.println("==========店家列表==========");
                 for (int i = 0; i < x.size(); i++) {
@@ -31,7 +30,7 @@ public class storeList {
                         storeIntroduction.IntroductionShow(x);
                         break;
                     case 2:
-                        x = storeDelete.deletStore(false);
+                        storeDelete.deletStore(x);
                         break;
                     case 3:
                         checkStoreNameList++;
@@ -41,7 +40,6 @@ public class storeList {
                         break;
                 }
             }
-        }
         for (int loop= 0; loop < 30; loop++) {
             System.out.println("");
         }

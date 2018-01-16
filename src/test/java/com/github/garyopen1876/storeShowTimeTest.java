@@ -46,5 +46,11 @@ public class storeShowTimeTest extends TestCase {
             System.out.println("success使用者輸入不在列表內的店家");
         }
     }
+    public void test_4() {
+        storeShowTime sS=new storeShowTime();
+        ArrayList<storeData> testArray = new ArrayList<storeData>();
+        assertEquals(testArray,  sS.storeShowTime(testArray));
+        System.out.println("店家被刪光光了");
+        }
 
 }
