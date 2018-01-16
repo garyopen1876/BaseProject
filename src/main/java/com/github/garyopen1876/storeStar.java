@@ -17,20 +17,23 @@ public class storeStar {
         System.out.println("歡迎來到提供店家評價");
             int checkstoreStar2=0;
             System.out.println("=======================================");
-            System.out.print("請輸入想要過濾的評價範圍(0~5)，輸入-1、-1返回主介面:");
-            System.out.print("評價範圍(低):");
+            System.out.println("請輸入想要過濾的評價範圍(0~5)，輸入-1、-1返回主介面:");
+            System.out.println("評價範圍(低):");
             double start = ScannerstoreStar.nextInt();
-            System.out.print("評價範圍(高):");
+            System.out.println("評價範圍(高):");
             double end = ScannerstoreStar.nextInt();
             if(start == -1 && end == -1){
-                for (int loop = 0; loop < 30; loop++) {
+                for (int loop= 0; loop < 30; loop++) {
                     System.out.println("");
                 }
                 System.out.println("返回主介面");
                 checkstoreStar2++;
             }
             if(checkstoreStar2==0) {
-                System.out.println("==========店家列表==========");
+                for (int loop= 0; loop < 30; loop++) {
+                    System.out.println("");
+                }
+                System.out.println("======="+start+"~"+end+"顆星的店家======");
                 int flag = 0;
 
                 for (i = 0; i < likeStar.size(); i++) {

@@ -83,5 +83,17 @@ public void testStoreNameList() throws Exception {
     storeList storeListTest=new storeList();
     assertEquals(testArr,storeListTest.storeNameList(testArr,true));
 }
+    @Test
+    public void test_1(){
+        storeList sL=new storeList();
+        ArrayList<storeData> testArray=new ArrayList<storeData>();
+        storeData store1 = new storeData("媽媽餐","媽媽的味道", "我家",0,5.0);
+        testArray.add(store1);
+
+        String data= "3";
+        System.setIn(new ByteArrayInputStream(data.getBytes()));
+        assertEquals(testArray,sL.storeNameList(testArray,false));
+
+    }
 
 }
