@@ -24,7 +24,7 @@ public class storeStar {
             double end = ScannerstoreStar.nextInt();
             if(start == -1 && end == -1){
                 for (int loop= 0; loop < 30; loop++) {
-                    System.out.println(" ");
+                    System.out.println("");
                 }
                 System.out.println("返回主介面");
                 checkstoreStar2++;
